@@ -1,0 +1,17 @@
+CREATE TABLE exampleEntity (
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+
+    getEntityByName:
+      SELECT * FROM exampleEntity WHERE title = :name;
+
+    getAllEntities:
+      SELECT * FROM exampleEntity ORDER BY title ASC;
+
+    insertEntity:
+      INSERT OR REPLACE INTO exampleEntity VALUES (?,?,?);
+
+    deleteEntityById:
+      DELETE FROM exampleEntity WHERE id = :id;
